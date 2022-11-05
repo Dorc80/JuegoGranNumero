@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Gran Numero</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 an 100</p>
+        <p>Take a guess</p>
+        <% if (result) { %>
+            <div <% if (result.includes('was the number')) { %> class="result-green" <% } else { %> class="result-red" <% } %> >
+                <%= result %>
+
+                <% if (result.includes('was the number')) { %>
+
+                    <form action="again">
+                        <div>
+                            <button>play again!</button>
+                        </div>
+                    </form>
+
+                <% } %>
+
+            </div>
+        <% } %>
+
+        <% if (!(result && result.includes('was the number'))) { %>
+
+            <div>
+                <form action="/" class="fcolumn" method="post">
+                    <input name="numero" type="text">
+                    <button>Submit</button>
+                </form>
+            </div>
+
+        <% } %>
+
+    </main>
+</body>
+</html>
